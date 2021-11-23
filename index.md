@@ -1,6 +1,6 @@
 layout: page
 title: "GREYSKYSPIN"
-<!-- permalink: /URL-PATH/ -->
+permalink: /test
 
 ## This is my projects page
 
