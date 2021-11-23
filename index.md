@@ -1,6 +1,8 @@
+---
 layout: page
 title: "GREYSKYSPIN"
 permalink: /test
+---
 
 ## This is my projects page
 
