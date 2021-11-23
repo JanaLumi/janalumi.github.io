@@ -1,3 +1,7 @@
+layout: page
+title: "GREYSKYSPIN"
+<!-- permalink: /URL-PATH/ -->
+
 ## This is my projects page
 
 You can use the [editor on GitHub](https://github.com/GreySkySpin/greyskyspin.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
