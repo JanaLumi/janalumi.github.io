@@ -5,7 +5,7 @@ body {
   padding: 20px;
   background: #71ACBC;
   background: linear-gradient(182deg,rgba(113, 172, 188, 1) 14%, rgba(146, 196, 60, 1) 59%, rgba(251, 200, 119, 1) 100%);
-  color: #333;
+  color: #eee;
 }
 
 header, footer {
