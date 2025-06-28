@@ -3,7 +3,8 @@ body {
   max-width: 900px;
   margin: auto;
   padding: 20px;
-  background: #f7f7f7;
+  background: #71ACBC;
+  background: linear-gradient(182deg,rgba(113, 172, 188, 1) 14%, rgba(146, 196, 60, 1) 59%, rgba(251, 200, 119, 1) 100%);
   color: #333;
 }
 
