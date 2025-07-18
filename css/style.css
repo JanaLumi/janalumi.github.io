@@ -1,14 +1,13 @@
 @font-face {
-  font-family: 'Futura';
-  src: url('../fonts/Futura.woff2') format('woff2'),
-       url('../fonts/Futura.woff') format('woff');
+  font-family: 'Sulphur Point';
+  src: url('../fonts/sulphur-point-regular.tff') format('tff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 body {
-  font-family: Futura, Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Sulphur Point', Tahoma, Geneva, Verdana, sans-serif;
   max-width: 900px;
   line-height: 1.6;
   margin: auto;
