@@ -27,6 +27,10 @@ header, footer {
   padding: 1rem;
 }
 
+p {
+  margin-bottom: 1em;
+}
+
 .project-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
