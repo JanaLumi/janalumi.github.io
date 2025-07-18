@@ -55,7 +55,6 @@ h3 {
 
 p {
   margin-bottom: 1em;
-  color: #333;
 }
 
 .project-list {
@@ -70,11 +69,11 @@ p {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: transform 0.2s ease;
-  color: #333;
+  color: #444;
 }
 
 .project-card p {
-  color: #333;
+  color: #555;
 }
 
 .project-card:hover {
