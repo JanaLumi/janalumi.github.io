@@ -1,9 +1,9 @@
 @font-face {
   font-family: "Sulphur Point";
   src: url("https://janalumi.github.io/fonts/SulphurPoint-Regular.ttf") format("truetype");
-  font-weight: regular;
+/*  font-weight: regular;
   font-style: normal;
-  font-display: swap;
+  font-display: swap; */
 }
 
 body {
