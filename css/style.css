@@ -1,7 +1,15 @@
 @font-face {
   font-family: "Sulphur Point";
   src: url("https://janalumi.github.io/fonts/SulphurPoint-Regular.ttf") format("truetype");
-/*  font-weight: regular;
+/*  font-weight: normal;
+  font-style: normal;
+  font-display: swap; */
+}
+
+@font-face {
+  font-family: "Monterrat Alts";
+  src: url("https://janalumi.github.io/fonts/MontserratAlternates-Regular.ttf") format("truetype");
+/*  font-weight: normal;
   font-style: normal;
   font-display: swap; */
 }
@@ -28,7 +36,7 @@ header, footer {
 }
 
 h1 {
-  font-family: "Sulphur Point", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Monterrat Alts", Tahoma, Geneva, Verdana, sans-serif;
   margin-bottom: 1.4em;
 }
 
