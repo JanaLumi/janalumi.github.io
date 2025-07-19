@@ -74,7 +74,7 @@ p {
 .project-card {
   text-align: center;
   background: white;
-/*  padding: 1rem; */
+  padding: 1rem 1.2rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: transform 0.2s ease;
@@ -84,7 +84,6 @@ p {
   color: #888;
   font-size: 1.2em;
   letter-spacing: 1.6px;
-  padding: 1rem 1.2rem;
 }
 
 .project-card:hover {
