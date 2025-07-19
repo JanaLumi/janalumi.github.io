@@ -70,7 +70,7 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   padding: 0 1rem; /* or adjust to taste */
-  box-sizing: border-box;
+/*  box-sizing: border-box; */
 }
 
 .project-card {
@@ -118,7 +118,7 @@ p {
 
 @media (max-width: 400px) and (orientation: portrait) {
   html, body {
-    margin: 0;
+    margin: 20px;
     max-width: 100%;
     overflow-x: hidden;
   }
