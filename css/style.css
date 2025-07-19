@@ -129,6 +129,8 @@ p {
   }
 
   .project-list {
+     margin: 0 auto;
+     max-width: 95%;
      gap: 2.2rem;
   }
 }
