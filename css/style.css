@@ -114,6 +114,7 @@ p {
   text-decoration: underline;
 }
 
+/* debugging
 body, .project-list, .project-card {
   outline: 1px solid rgba(255,0,0,0.3);
 }
@@ -124,7 +125,7 @@ body, .project-list, .project-card {
   height: 0;
   border: 1px dashed limegreen;
   margin-bottom: 8px;
-}
+} */
 
 @media (min-width: 600px) {
   body {
