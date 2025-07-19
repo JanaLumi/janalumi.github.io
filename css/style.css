@@ -17,7 +17,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@200;300;400;500;600;700;800;900;&family=Questrial&family=Rajdhani:wght@500;700&display=swap');
 
 body {
-  font-family: "Questrial", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Mulish", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
   max-width: 900px;
   line-height: 1.6;
@@ -34,7 +34,7 @@ header, footer {
 }
 
 #description {
-  font-family: "Questrial", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Mulish", Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   padding: 1rem;
 }
