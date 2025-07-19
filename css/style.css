@@ -111,7 +111,11 @@ p {
 }
 
 @media (max-width: 400px) and (orientation: portrait) {
-	.project-list {
+  body {
+     width: 100vw;
+  }
+
+  .project-list {
      gap: 2.2rem;
   }
 }
