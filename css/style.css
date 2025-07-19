@@ -64,6 +64,7 @@ p {
 }
 
 .project-card {
+  content-justified: center;
   background: white;
   padding: 1rem;
   border-radius: 8px;
