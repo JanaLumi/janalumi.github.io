@@ -18,7 +18,7 @@
 
 body {
   font-family: "Sulphur Point", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   max-width: 900px;
   line-height: 1.6;
   margin: auto;
@@ -44,7 +44,7 @@ h1 {
 }
 
 h2 {
-  font-family: "Rajdhani", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Sulphur Point", Tahoma, Geneva, Verdana, sans-serif;
   margin-bottom: 1.2em;
   letter-spacing: 2px;
 }
@@ -69,11 +69,10 @@ p {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: transform 0.2s ease;
-  color: #444;
 }
 
 .project-card p {
-  color: #666;
+  color: #777;
   font-size: 1em;
 }
 
@@ -88,7 +87,7 @@ p {
 
 .project-card h3 {
   margin-top: 0.5rem;
-  color: #444;
+  color: #555;
 }
 
 .project-card a {
