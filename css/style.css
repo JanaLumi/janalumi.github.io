@@ -34,6 +34,7 @@ header, footer {
 }
 
 #description {
+  font-family: "Sulphur Point", Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   padding: 1rem;
 }
@@ -97,7 +98,6 @@ p {
 }
 
 .project-card a {
-  text-align: left;
   display: inline-block;
   margin-top: 0.5rem;
   color: #007acc;
