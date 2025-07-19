@@ -72,7 +72,7 @@ p {
 }
 
 .project-card p {
-  color: #777;
+  color: #888;
   font-size: 1em;
 }
 
@@ -86,8 +86,9 @@ p {
 }
 
 .project-card h3 {
+  font-weight: 800;
   margin-top: 0.5rem;
-  color: #555;
+  color: #666;
 }
 
 .project-card a {
