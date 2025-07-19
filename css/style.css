@@ -23,7 +23,6 @@
 body {
   font-family: "Mulish", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
-  overflow-x: hidden;
   max-width: 900px;
   line-height: 1.6;
   margin: auto;
@@ -116,6 +115,14 @@ p {
 }
 
 @media (max-width: 400px) and (orientation: portrait) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
   body {
      width: 100%;
   }
