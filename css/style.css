@@ -118,6 +118,10 @@ p {
   text-decoration: underline;
 }
 
+body, .project-list, .project-card {
+  outline: 1px solid rgba(255,0,0,0.3);
+}
+
 @media (min-width: 600px) {
   body {
     max-width: 900px;
