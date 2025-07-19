@@ -69,7 +69,7 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
-  padding: 0 1rem; /* or adjust to taste */
+ /* padding: 0 1rem; */ /* or adjust to taste */
 /*  box-sizing: border-box; */
 }
 
