@@ -150,7 +150,8 @@ body, .project-list, .project-card {
   .project-list {
   /*   margin: 0 auto; */
      gap: 2.2rem;
-     
+     width: auto;
+     max-width: 100%;
   }
 
   .project-card {
