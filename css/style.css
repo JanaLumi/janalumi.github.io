@@ -84,6 +84,7 @@ p {
   color: #888;
   font-size: 1.2em;
   letter-spacing: 1.6px;
+  padding: 1rem 1.2rem;
 }
 
 .project-card:hover {
