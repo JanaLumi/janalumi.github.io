@@ -76,7 +76,7 @@ p {
 .project-card p {
   color: #888;
   font-size: 1.2em;
-  letter-spacing: 2px;
+  letter-spacing: 1.6px;
 }
 
 .project-card:hover {
@@ -93,7 +93,7 @@ p {
   font-size: 1.5em;
   margin-top: 0.5rem;
   color: #666;
-  letter-spacing: 2px;
+  letter-spacing: 1.8px;
 }
 
 .project-card a {
