@@ -138,8 +138,8 @@ p {
   .project-list {
      margin: 0 auto;
      max-width: 100%;
-     gap: 2.2rem;
-     padding: 0 1rem;
+     gap: 2rem;
+ /*    padding: 0 1rem;*/
   }
 
   .project-card {
