@@ -68,7 +68,7 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
-  padding-inline: 1rem;
+  padding-inline: 0;
 }
 
 .project-card {
@@ -134,13 +134,14 @@ body, .project-list, .project-card {
   }
   
   body {
-     width: 100%;
+     width: auto;
+     padding: 0 1.2rem;
   }
 
   .project-list {
-     margin: 0 auto;
+  /*   margin: 0 auto; */
      gap: 2.2rem;
-     padding: 0 1.2rem;
+     
   }
 
   .project-card {
