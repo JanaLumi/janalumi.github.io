@@ -16,15 +16,13 @@
   font-display: swap;
 }
 
-/*
 *, *::before, *::after {
   box-sizing: border-box;
-} */
+}
 
 body {
   font-family: "Mulish", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
-  max-width: 900px;
   line-height: 1.6;
   margin: auto;
   padding: 20px;
@@ -115,6 +113,12 @@ p {
 
 .project-card a:hover {
   text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+  body {
+    max-width: 900px;
+  }
 }
 
 @media (max-width: 400px) and (orientation: portrait) {
