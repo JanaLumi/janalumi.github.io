@@ -2,23 +2,23 @@
   font-family: "Sulphur Point";
   src: url("https://janalumi.github.io/fonts/SulphurPoint-Regular.ttf") format("truetype");
 /*  font-weight: normal;
-  font-style: normal;
-  font-display: swap; */
+  font-style: normal; */
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Montserrat Alts";
   src: url("https://janalumi.github.io/fonts/MontserratAlternates-Regular.ttf") format("truetype");
 /*  font-weight: normal;
-  font-style: normal;
-  font-display: swap; */
+  font-style: normal; */
+  font-display: swap;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Questrial&family=Rajdhani:wght@500;700&display=swap');
 
 body {
   font-family: "Questrial", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   max-width: 900px;
   line-height: 1.6;
   margin: auto;
