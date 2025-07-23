@@ -34,6 +34,8 @@ body {
 header, footer {
   text-align: center;
   margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.2); /* glossy look */
+  backdrop-filter: blur(12px);
 }
 
 #description {
