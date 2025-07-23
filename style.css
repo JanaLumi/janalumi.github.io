@@ -17,7 +17,7 @@
 }
 
 :root {
-  --header-h: 90px;
+  --header-h: 120px;
   --footer-h: 60px;
 }
 
@@ -80,7 +80,7 @@ footer {
 
 h1 {
   font-family: "Montserrat Alts", Tahoma, Geneva, Verdana, sans-serif;
-  margin-bottom: 1.4em;
+  margin-bottom: 0.4em;
 }
 
 h2 {
