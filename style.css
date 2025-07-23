@@ -49,6 +49,8 @@ header {
   height: var(--header-h);
   text-align: center;
   margin-bottom: 2rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   background: rgba(255, 255, 255, 0.2); /* glossy look */
   backdrop-filter: blur(12px);
   z-index: 1000;
@@ -62,6 +64,8 @@ footer {
   height: var(--footer-h);
   text-align: center;
   margin-top: 2rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   background: rgba(255, 255, 255, 0.2); /* glossy look */
   backdrop-filter: blur(12px);
   z-index: 1000;
