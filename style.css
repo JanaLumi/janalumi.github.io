@@ -72,9 +72,21 @@ footer {
   z-index: 1000;
 }
 
+.connect-socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0;
+}
+
 footer p {
   margin: 0.2em 0;
   color: #2e6969;
+}
+
+.socials {
+  
 }
 
 #description {
