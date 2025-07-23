@@ -48,7 +48,7 @@ header {
   right: 0;
   height: var(--header-h);
   text-align: center;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   margin-bottom: 2rem;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
