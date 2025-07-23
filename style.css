@@ -109,7 +109,7 @@ h3 {
 }
 
 p {
-  margin-bottom: 1em;
+  margin-bottom: 1.2em;
 }
 
 .project-list {
@@ -153,7 +153,6 @@ p {
 
 .project-card a {
   display: inline-block;
-  margin-top: 0.5rem;
   color: #007acc;
   text-decoration: none;
 }
