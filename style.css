@@ -121,6 +121,7 @@ header h1 {
 header p {
   margin: 0.2rem 0;
   color: #448c8c;
+  white-space: nowrap;
 }
 
 h1 {
