@@ -145,6 +145,11 @@ p {
   margin-bottom: 1.2rem;
 }
 
+main {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 .project-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
