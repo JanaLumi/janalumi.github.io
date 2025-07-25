@@ -204,7 +204,7 @@ body, .project-list, .project-card {
   
   body {
      width: auto;
-     var(--header-h) 0.5rem var(--footer-h) 0.5rem;
+     var(--header-h) 0.3rem var(--footer-h) 0.3rem;
   }
 
   .project-list {
