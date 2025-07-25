@@ -35,7 +35,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   margin: auto;
-  padding: 0 1rem;
+  padding: 0 0.2rem;
   background: #71ACBC;
   background: linear-gradient(182deg,rgba(113, 172, 188, 1) 14%, rgba(146, 196, 60, 1) 59%, rgba(251, 200, 119, 1) 100%);
   color: #eee;
