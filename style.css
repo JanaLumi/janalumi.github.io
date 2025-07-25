@@ -204,13 +204,13 @@ body, .project-list, .project-card {
   
   body {
      width: auto;
-     var(--header-h) 0.2rem var(--footer-h) 0.2rem;
+     var(--header-h) 0.5rem var(--footer-h) 0.5rem;
   }
 
   .project-list {
-  /*   margin: 0 auto; */
+     margin: auto 0; */
      gap: 2.2rem 0;
-     width: auto;
+  /*   width: auto; */
      max-width: 100%;
   }
 
