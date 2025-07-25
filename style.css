@@ -90,6 +90,17 @@ footer {
   padding: 1rem;
 }
 
+.app-header {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+/*  font-size: 2rem; */ /* Adjust as needed */
+  line-height: 1.2;
+  max-width: 100%;
+}
+
 header h1 {
   font-family: "Montserrat Alts", Tahoma, Geneva, Verdana, sans-serif;
   margin: -10px 0 0 0;
@@ -208,9 +219,9 @@ body, .project-list, .project-card {
   }
 
   .project-list {
-     margin: auto 0; */
+     margin: auto 0;
      gap: 2.2rem 0;
-  /*   width: auto; */
+     width: auto;
      max-width: 100%;
   }
 
