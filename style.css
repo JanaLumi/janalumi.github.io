@@ -206,7 +206,6 @@ body, .project-list, .project-card {
      width: auto;
      var(--header-h) 0.2rem var(--footer-h) 0.2rem;
   }
-}
 
   .project-list {
   /*   margin: 0 auto; */
