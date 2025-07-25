@@ -201,12 +201,13 @@ body, .project-list, .project-card {
   body {
      width: auto;
      padding: 0 0.2rem;
+    box-sizing: border-box;
   }
 }
 
   .project-list {
   /*   margin: 0 auto; */
-     gap: 2.2rem;
+     gap: 2.2rem 0;
      width: auto;
      max-width: 100%;
   }
