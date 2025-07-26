@@ -35,7 +35,6 @@ html, body {
   max-width: 100%;
   box-sizing: border-box;
   z-index: 0;
-/*  margin: 10px 0 0 0; */
 }
 
 body {
@@ -45,6 +44,7 @@ body {
   background: #71ACBC;
   background: linear-gradient(182deg,rgba(113, 172, 188, 1) 14%, rgba(146, 196, 60, 1) 59%, rgba(251, 200, 119, 1) 100%);
   color: #eee;
+  margin: 10px 0 0 0;
   padding: var(--header-h) 1rem var(--footer-h) 1rem;
   overflow-x: visible;
 }
