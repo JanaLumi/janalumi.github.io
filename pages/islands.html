@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Island Hopping Story</title>
+<style>
+  body {
+    font-family: "Mulish", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #71ACBC, #FBC877);
+    color: #333;
+  }
+
+  section {
+    display: none; /* hide all sections by default */
+    min-height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+
+  section.active {
+    display: block; /* show the current section */
+  }
+
+  h2 {
+    font-family: "Sulphur Point", sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .choices {
+    margin-top: 2rem;
+  }
+
+  .choices button {
+    margin: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #007acc;
+    color: white;
+    transition: background 0.2s;
+  }
+
+  .choices button:hover {
+    background: #005f99;
+  }
+</style>
+</head>
+<body>
+
+<!-- Island 1 -->
+<section id="island-1" class="active">
+  <h2>Island One: Arrival</h2>
+  <p>You land on the first island of your journey. The air is fresh and the ocean sparkles.</p>
+  <div class="choices">
+    <button data-target="island-2">Sail to Island Two</button>
+    <button data-target="island-3">Explore more here</button>
+  </div>
+</section>
+
+<!-- Island 2 -->
+<section id="island-2">
+  <h2>Island Two: The Forest</h2>
+  <p>The forest is dense and alive with birdsong. Paths diverge in multiple directions.</p>
+  <div class="choices">
+    <button data-target="island-3">Head to the next island</button>
+    <button data-target="island-1">Return to Island One</button>
+  </div>
+</section>
+
+<!-- Island 3 -->
+<section id="island-3">
+  <h2>Island Three: Hidden Cove</h2>
+  <p>A hidden cove reveals a secret beach with smooth white sand.</p>
+  <div class="choices">
+    <button data-target="island-1">Return to Island One</button>
+    <button data-target="island-2">Go back to the forest</button>
+  </div>
+</section>
+
+<script>
+  // Vanilla JS to handle navigation
+  document.querySelectorAll(".choices button").forEach(button => {
+    button.addEventListener("click", () => {
+      const targetId = button.getAttribute("data-target");
+      document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+      document.getElementById(targetId).classList.add("active");
+    });
+  });
+</script>
+
+</body>
+</html>
