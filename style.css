@@ -227,7 +227,7 @@ body, .project-list, .project-card {
 @media (min-width: 601px and max-width: 900px) and (orientation: portrait) {
   .project-list {
      margin: auto 0;
-     grid-template-columns: repeat(auto-fill, 100%);
+     grid-template-columns: repeat(auto-fit, 100%);
      gap: 2rem 0;
      width: 100%;
   }
@@ -251,7 +251,7 @@ body, .project-list, .project-card {
 
   .project-list {
      margin: auto 0;
-     grid-template-columns: repeat(auto-fill, 100%);
+     grid-template-columns: repeat(auto-fit, 100%);
      gap: 2rem 0;
      width: 100%;
   }
