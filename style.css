@@ -218,16 +218,38 @@ body, .project-list, .project-card {
   margin-bottom: 8px;
 } */
 
-@media (min-width: 600px) and (orientation: landscape) {
+@media (min-width: 1025px) and (orientation: landscape) {
   body {
     max-width: 900px;
     margin: auto;
   }
 }
-@media (min-width: 601px and max-width: 900px) and (orientation: portrait) {
+
+/* Mobile portrait (1 column) */
+@media (max-width: 480px) and (orientation: portrait) {
+  .project-list {
+    grid-template-columns: repeat(1, minmax(280px, 1fr));
+  }
+}
+
+/* Mobile landscape (2 columns) */
+@media (max-width: 768px) and (orientation: landscape) {  
+  .project-list {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+  }
+}
+
+/* Tablet portrait (2 columns) */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+  
+  body {
+    max-width: 900px;
+    margin: auto;
+  }
+  
   .project-list {
      margin: auto 0;
-/*     grid-template-columns: repeat(auto-fit, 100%); */
+     grid-template-columns: repeat(2, minmax(280px, 1fr));
      gap: 2rem 0;
      width: 100%;
   }
@@ -238,7 +260,8 @@ body, .project-list, .project-card {
   }
 }
 
-@media (max-width: 600px) and (orientation: portrait) {
+/* Mobile Portrait: always 1 column */
+@media (max-width: 768px) and (orientation: portrait) {
   html, body {
     margin: 0;
     max-width: 100%;
@@ -251,7 +274,7 @@ body, .project-list, .project-card {
 
   .project-list {
      margin: auto 0;
-  /*   grid-template-columns: repeat(auto-fit, 100%); */
+     grid-template-columns: repeat(1, minmax(280px, 1fr));
      gap: 2rem 0;
      width: 100%;
   }
