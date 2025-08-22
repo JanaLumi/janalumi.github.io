@@ -153,7 +153,7 @@ main {
 .project-list {
   display: grid;
  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
-  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr)); /* each card fixed width */
+  grid-template-columns: repeat(3, minmax(250px, 1fr)); /* each card fixed width */
   gap: 1rem;
 /*  padding-inline: 0; */
   max-width: 100%;
@@ -227,7 +227,7 @@ body, .project-list, .project-card {
 @media (min-width: 601px and max-width: 900px) and (orientation: portrait) {
   .project-list {
      margin: auto 0;
-     grid-template-columns: repeat(auto-fit, 100%);
+/*     grid-template-columns: repeat(auto-fit, 100%); */
      gap: 2rem 0;
      width: 100%;
   }
@@ -251,7 +251,7 @@ body, .project-list, .project-card {
 
   .project-list {
      margin: auto 0;
-     grid-template-columns: repeat(auto-fit, 100%);
+  /*   grid-template-columns: repeat(auto-fit, 100%); */
      gap: 2rem 0;
      width: 100%;
   }
