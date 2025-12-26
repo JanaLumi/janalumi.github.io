@@ -285,7 +285,7 @@ body, .project-list, .project-card {
   .project-list {
      margin: auto 0;
      grid-template-columns: repeat(2, minmax(280px, 1fr));
-     gap: 2rem 0;
+     gap: 1rem;
      width: 100%;
   }
 
