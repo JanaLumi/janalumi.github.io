@@ -268,7 +268,10 @@ body, .project-list, .project-card {
 }
 
 /* Mobile landscape (2 columns) */
-@media (max-width: 1024px) and (orientation: landscape) {  
+@media (max-width: 1024px) and (orientation: landscape) {
+  header {
+    transform: translateY(0);
+  }
   .project-list {
     grid-template-columns: repeat(2, minmax(280px, 1fr));
   }
