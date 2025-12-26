@@ -148,7 +148,6 @@ p {
 main {
   overflow-x: hidden;
   width: 100%;
-  padding: 0 1rem 1rem 0 ;
 }
 
 .project-list {
@@ -250,7 +249,7 @@ body, .project-list, .project-card {
   .project-list {
      margin: auto 0;
      grid-template-columns: repeat(1, minmax(280px, 1fr));
-     gap: 2rem 0;
+     gap: 1rem;
      width: 100%;
   }
 
