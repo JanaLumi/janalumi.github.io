@@ -1,1 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Janna Vepsäläinen — Works</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* =============================================
+       COLOUR VARIABLES
+       Swap any value here to cascade throughout.
+    ============================================= */
+    :root {
+      --bg:              #f2ede4;   /* warm parchment / tea-stained off-white */
+      --bg-drawer:       #e8e1d4;   /* slightly darker parchment for drawer */
+      --bg-overlay:      rgba(30, 24, 16, 0.18); /* scrim behind open drawer */
 
+      --text-primary:    #1e1810;   /* near-black, warm brown-black */
+      --text-secondary:  #4a3f32;   /* dark warm brown — bylines, labels */
+      --text-meta:       #7a6e62;   /* medium warm grey-brown — dates, captions */
+      --text-link:       #2d5a27;   /* deep grass green — nav links */
+      --text-link-hover: #1a3818;   /* darker grass green on hover */
+      --text-accent:     #8b3a0f;   /* burnt sienna — used sparingly */
+
+      --border:          #c8bfb0;   /* soft warm grey — rules and grid borders */
+      --border-strong:   #4a3f32;   /* dark brown — strong rules */
+
+      --nav-trigger-bg:  transparent;
+      --nav-trigger-color: #2d5a27; /* matches --text-link */
+    }
+
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      min-height: 100vh;
+      /* subtle paper texture via CSS noise */
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    }
+
+    a { color: var(--text-link); text-decoration: none; }
+    a:hover { color: var(--text-link-hover); text-decoration: underline; }
+
+    /* =============================================
+       DRAWER NAVIGATION
+    ============================================= */
+    /* Trigger button — top right */
+    .nav-trigger {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      z-index: 200;
+      background: var(--nav-trigger-bg);
+      border: none;
+      cursor: pointer;
+      padding: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-trigger-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-link);
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      line-height: 1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-trigger:hover .nav-trigger-label { opacity: 1; }
+
+    /* SVG solarpunk plant trigger icon */
+    .nav-trigger svg {
+      width: 38px;
+      height: 38px;
+      color: var(--nav-trigger-color);
+      transition: transform 0.4s ease;
+    }
+    .nav-trigger:hover svg { transform: rotate(15deg) scale(1.08); }
+
+    /* Overlay scrim */
+    .nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--bg-overlay);
+      z-index: 150;
+      backdrop-filter: blur(1px);
+    }
+    .nav-overlay.open { display: block; }
+
+    /* Drawer panel */
+    .nav-drawer {
+      position: fixed;
+      top: 0;
+      right: -320px;
+      width: 280px;
+      max-width: 85vw;
+      height: 100vh;
+      background: var(--bg-drawer);
+      border-left: 1px solid var(--border);
+      z-index: 160;
+      padding: 4rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      transition: right 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+      overflow-y: auto;
+    }
+    .nav-drawer.open { right: 0; }
+
+    /* Pull-tab hint on left edge of drawer (visible when closed) */
+    .nav-tab {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 155;
+      width: 18px;
+      background: var(--bg-drawer);
+      border: 1px solid var(--border);
+      border-right: none;
+      border-radius: 4px 0 0 4px;
+      padding: 0.75rem 0.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: right 0.35s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.2s;
+    }
+    .nav-tab.hidden { opacity: 0; pointer-events: none; }
+    .nav-tab span {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.5rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-meta);
+      writing-mode: vertical-rl;
+    }
+
+    .nav-drawer-section {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .nav-drawer-heading {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-meta);
+      margin-bottom: 0.75rem;
+    }
+
+    .nav-drawer a {
+      display: block;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      padding: 0.4rem 0;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-drawer a:hover {
+      color: var(--text-link);
+      border-bottom-color: var(--border);
+      text-decoration: none;
+    }
+    .nav-drawer a.active {
+      color: var(--text-link);
+      font-weight: 600;
+    }
+
+    /* Close button inside drawer */
+    .nav-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-meta);
+    }
+    .nav-close:hover { color: var(--text-primary); }
+
+    /* =============================================
+       PAGE LAYOUT
+    ============================================= */
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 6rem;
+    }
+
+    /* =============================================
+       HEADER
+    ============================================= */
+    .site-header {
+      margin-bottom: 3.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-strong);
+    }
+
+    .site-name {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--text-primary);
+      text-transform: uppercase;
+    }
+
+    .site-name span {
+      font-weight: 600;
+    }
+
+    .site-tagline {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--text-meta);
+      margin-top: 0.3rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* =============================================
+       INTRO / ABOUT TEXT
+    ============================================= */
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem 3rem;
+      margin-bottom: 4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 600px) {
+      .intro { grid-template-columns: 1fr; }
+    }
+
+    .intro-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-meta);
+      padding-top: 0.35rem;
+    }
+
+    .intro-text p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    .intro-text p:last-child { margin-bottom: 0; }
+
+    .intro-text em {
+      font-style: italic;
+      color: var(--text-primary);
+    }
+
+    /* =============================================
+       WORKS GRID PREVIEW (homepage thumbnails)
+    ============================================= */
+    .section-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-meta);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .category-card {
+      display: block;
+      text-decoration: none;
+    }
+
+    .category-card:hover .category-thumb { opacity: 0.85; }
+    .category-card:hover .category-title { color: var(--text-link); text-decoration: none; }
+
+    .category-thumb {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      background: var(--border);  /* placeholder colour before image loads */
+      display: block;
+      transition: opacity 0.25s ease;
+      /* placeholder shown when no src — remove once real images added */
+      min-height: 160px;
+    }
+
+    /* Placeholder shimmer for missing images */
+    .category-thumb-placeholder {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      min-height: 160px;
+      background: linear-gradient(135deg, var(--border) 0%, var(--bg-drawer) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .category-thumb-placeholder span {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-meta);
+    }
+
+    .category-title {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-top: 0.6rem;
+      transition: color 0.2s;
+    }
+
+    .category-count {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--text-meta);
+      margin-top: 0.1rem;
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-meta);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV TRIGGER (solarpunk plant SVG) ── -->
+  <button class="nav-trigger" id="navTrigger" aria-label="Open navigation" aria-expanded="false" aria-controls="navDrawer">
+    <span class="nav-trigger-label">Menu</span>
+    <!-- Solarpunk plant / sprout SVG — replace the block below with an <img> if you have an image -->
+    <!-- To use an image instead: comment out the <svg> and uncomment the <img> below it -->
+    <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- stem -->
+      <path d="M19 34 L19 16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <!-- main leaf left -->
+      <path d="M19 22 C14 20 10 14 13 9 C16 14 18 18 19 22Z" fill="currentColor" opacity="0.75"/>
+      <!-- main leaf right -->
+      <path d="M19 18 C24 15 29 10 26 5 C23 10 21 14 19 18Z" fill="currentColor" opacity="0.9"/>
+      <!-- small sprout left -->
+      <path d="M19 28 C15 27 12 23 14 19 C16 23 17 26 19 28Z" fill="currentColor" opacity="0.5"/>
+      <!-- sun circle -->
+      <circle cx="28" cy="9" r="2.5" fill="currentColor" opacity="0.4"/>
+      <!-- sun rays -->
+      <line x1="28" y1="5.5" x2="28" y2="4"   stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+      <line x1="31" y1="6.5" x2="32" y2="5.2" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+      <line x1="32" y1="9"   x2="33.5" y2="9" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+    </svg>
+    <!-- <img src="./assets/menu-plant.svg" alt="" aria-hidden="true" width="38" height="38" /> -->
+  </button>
+
+  <!-- ── PULL-TAB HINT (visible when drawer is closed) ── -->
+  <div class="nav-tab" id="navTab" role="presentation" aria-hidden="true">
+    <span>Works</span>
+  </div>
+
+  <!-- ── OVERLAY ── -->
+  <div class="nav-overlay" id="navOverlay" role="presentation"></div>
+
+  <!-- ── DRAWER ── -->
+  <nav class="nav-drawer" id="navDrawer" aria-label="Site navigation">
+    <button class="nav-close" id="navClose" aria-label="Close navigation">Close ×</button>
+
+    <div class="nav-drawer-section" style="margin-top:0; padding-top:0; border-top:none;">
+      <div class="nav-drawer-heading">Pages</div>
+      <a href="index.html" class="active">About</a>
+      <a href="cv.html">CV &amp; Displays</a>
+    </div>
+
+    <div class="nav-drawer-section">
+      <div class="nav-drawer-heading">Works</div>
+      <a href="works-canvas.html">Canvas paintings</a>
+      <a href="works-hardboard.html">Hardboard pieces</a>
+      <a href="works-textile.html">Textile sculptures</a>
+      <a href="works-concrete.html">Concrete &amp; mixed</a>
+      <a href="works-digital.html">Digital &amp; 360°</a>
+    </div>
+
+    <div class="nav-drawer-section">
+      <div class="nav-drawer-heading">Elsewhere</div>
+      <a href="https://vimeo.com/" target="_blank" rel="noopener">Vimeo ↗</a>
+      <!-- Add YouTube, GitHub pages link etc. here -->
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       MAIN PAGE CONTENT
+  ══════════════════════════════════════════ -->
+  <main class="page">
+
+    <header class="site-header">
+      <div class="site-name"><span>Janna Vepsäläinen</span></div>
+      <div class="site-tagline">material, texture, touch — art without gatekeepers</div>
+    </header>
+
+    <!-- INTRO TEXT — write this yourself; below is a scaffold -->
+    <section class="intro" aria-labelledby="about-label">
+      <div class="intro-label" id="about-label">About</div>
+      <div class="intro-text">
+        <p>
+          I am not sure when I became an artist. Perhaps it was never a single moment —
+          no grant letter, no gallery wall, no residency acceptance that made it true.
+          The work was already happening.
+        </p>
+        <p>
+          There is an assumption embedded in the art world that recognition precedes legitimacy.
+          That you are a painter once someone with institutional authority says so.
+          I think about writers with finished books sitting on hard drives,
+          unpublished not because the work is insufficient
+          but because demanding attention has become a profession in itself —
+          one that competes against industries with resources most of us will never have.
+        </p>
+        <p>
+          I prefer the idea of the <em>unartist</em>:
+          someone doing the work without waiting for permission to call it that.
+        </p>
+        <p>
+          My practice moves between painting, textile, concrete, and material salvage.
+          I am interested in texture as language — surfaces that communicate to touch,
+          not only to sight. Most of the art world, even sculpture, is visual.
+          You are not supposed to touch. I am working toward something different.
+        </p>
+        <!-- Add, remove or rewrite any paragraph above. This is your scaffold, not your final text. -->
+      </div>
+    </section>
+
+    <!-- WORKS OVERVIEW GRID -->
+    <section aria-labelledby="works-label">
+      <div class="section-label" id="works-label">Works — browse by material</div>
+
+      <div class="category-grid">
+
+        <a href="works-canvas.html" class="category-card">
+          <div class="category-thumb-placeholder">
+            <!-- Replace this div with: <img class="category-thumb" src="./images/cover-canvas.jpg" alt="Canvas paintings" /> -->
+            <span>Image</span>
+          </div>
+          <div class="category-title">Canvas paintings</div>
+          <div class="category-count">— works on canvas</div>
+        </a>
+
+        <a href="works-hardboard.html" class="category-card">
+          <div class="category-thumb-placeholder"><span>Image</span></div>
+          <div class="category-title">Hardboard pieces</div>
+          <div class="category-count">— salvaged substrates</div>
+        </a>
+
+        <a href="works-textile.html" class="category-card">
+          <div class="category-thumb-placeholder"><span>Image</span></div>
+          <div class="category-title">Textile sculptures</div>
+          <div class="category-count">— fibre &amp; form</div>
+        </a>
+
+        <a href="works-concrete.html" class="category-card">
+          <div class="category-thumb-placeholder"><span>Image</span></div>
+          <div class="category-title">Concrete &amp; mixed</div>
+          <div class="category-count">— material combinations</div>
+        </a>
+
+        <a href="works-digital.html" class="category-card">
+          <div class="category-thumb-placeholder"><span>Image</span></div>
+          <div class="category-title">Digital &amp; 360°</div>
+          <div class="category-count">— immersive works</div>
+        </a>
+
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <span>Janna Vepsäläinen</span>
+      <span>Tampere, Finland</span>
+    </footer>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       DRAWER JS
+  ══════════════════════════════════════════ -->
+  <script>
+    const trigger  = document.getElementById('navTrigger');
+    const drawer   = document.getElementById('navDrawer');
+    const overlay  = document.getElementById('navOverlay');
+    const closeBtn = document.getElementById('navClose');
+    const tab      = document.getElementById('navTab');
+
+    function openDrawer() {
+      drawer.classList.add('open');
+      overlay.classList.add('open');
+      tab.classList.add('hidden');
+      trigger.setAttribute('aria-expanded', 'true');
+      closeBtn.focus();
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      overlay.classList.remove('open');
+      tab.classList.remove('hidden');
+      trigger.setAttribute('aria-expanded', 'false');
+      trigger.focus();
+    }
+
+    trigger.addEventListener('click', openDrawer);
+    tab.addEventListener('click', openDrawer);
+    overlay.addEventListener('click', closeDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+    });
+  </script>
+
+</body>
+</html>
