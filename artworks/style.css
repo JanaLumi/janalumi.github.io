@@ -25,6 +25,24 @@
   ================================================================
 */
 
+/* Fonts */
+
+@font-face {
+  font-family: "Josefin Sans";
+  src: url("https://janalumi.github.io/fonts/JosefinSans-VariableFont_wght.ttf") format("truetype");
+/*  font-weight: normal;
+  font-style: normal; */
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("https://janalumi.github.io/fonts/EBGaramond-VariableFont_wght.ttf") format("truetype");
+/*  font-weight: normal;
+  font-style: normal; */
+  font-display: swap;
+}
+
 
 /* ================================================================
    1. COLOUR VARIABLES
