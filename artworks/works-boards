@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ╔══════════════════════════════════════════╗
+       ║  EDIT THIS LINE for each category page  ║
+       ╚══════════════════════════════════════════╝ -->
+  <title>Canvas paintings — Jana Lumi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV TRIGGER -->
+  <button class="nav-trigger" id="navTrigger" aria-label="Open navigation" aria-expanded="false" aria-controls="navDrawer">
+    <span class="nav-trigger-label">Menu</span>
+    <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M19 34 L19 16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M19 22 C14 20 10 14 13 9 C16 14 18 18 19 22Z" fill="currentColor" opacity="0.75"/>
+      <path d="M19 18 C24 15 29 10 26 5 C23 10 21 14 19 18Z" fill="currentColor" opacity="0.9"/>
+      <path d="M19 28 C15 27 12 23 14 19 C16 23 17 26 19 28Z" fill="currentColor" opacity="0.5"/>
+      <circle cx="28" cy="9" r="2.5" fill="currentColor" opacity="0.4"/>
+      <line x1="28" y1="5.5" x2="28" y2="4"   stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+      <line x1="31" y1="6.5" x2="32" y2="5.2" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+      <line x1="32" y1="9"   x2="33.5" y2="9" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+    </svg>
+  </button>
+
+  <div class="nav-tab" id="navTab" role="presentation" aria-hidden="true"><span>Works</span></div>
+  <div class="nav-overlay" id="navOverlay" role="presentation"></div>
+
+  <nav class="nav-drawer" id="navDrawer" aria-label="Site navigation">
+    <button class="nav-close" id="navClose" aria-label="Close navigation">Close ×</button>
+    <div class="nav-drawer-section" style="margin-top:0;padding-top:0;border-top:none;">
+      <div class="nav-drawer-heading">Pages</div>
+      <a href="index.html">About</a>
+      <a href="cv.html">CV &amp; Displays</a>
+    </div>
+    <div class="nav-drawer-section">
+      <div class="nav-drawer-heading">Works</div>
+      <!-- Mark the current page with class="active" -->
+      <a href="works-canvas.html" class="active">Canvas paintings</a>
+      <a href="works-hardboard.html">Hardboard pieces</a>
+      <a href="works-textile.html">Textile sculptures</a>
+      <a href="works-concrete.html">Concrete &amp; mixed</a>
+      <a href="works-digital.html">Digital &amp; 360°</a>
+    </div>
+    <div class="nav-drawer-section">
+      <div class="nav-drawer-heading">Elsewhere</div>
+      <a href="https://vimeo.com/" target="_blank" rel="noopener">Vimeo ↗</a>
+    </div>
+  </nav>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" id="lightboxClose">Close ×</button>
+    <button class="lightbox-nav lightbox-nav--prev" id="lightboxPrev" aria-label="Previous">&#8592;</button>
+    <img id="lightboxImg" src="" alt="" />
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+    <button class="lightbox-nav lightbox-nav--next" id="lightboxNext" aria-label="Next">&#8594;</button>
+  </div>
+
+  <!-- ══ MAIN CONTENT ══ -->
+  <main class="page">
+
+    <header class="site-header">
+      <div class="site-name"><a href="index.html">Jana Lumi</a></div>
+      <!-- ╔══════════════════════════════════════╗
+           ║  EDIT: page title per category       ║
+           ╚══════════════════════════════════════╝ -->
+      <h1 class="page-title">Canvas paintings</h1>
+    </header>
+
+    <!-- ╔══════════════════════════════════════════╗
+         ║  EDIT: short category description        ║
+         ║  (or remove this element entirely)       ║
+         ╚══════════════════════════════════════════╝ -->
+    <p class="category-intro">
+      Acrylic on stretched canvas. Irregular formats, pattern-making with the brush,
+      and colour that sometimes glows in the dark.
+    </p>
+
+    <div class="section-label">Works</div>
+
+    <!-- ══════════════════════════════════════════
+         WORKS GRID
+         To add a work: copy one <div class="work-item"> block.
+         For irregular/non-square pieces, add class "work-item--natural"
+         to show the full image without cropping.
+    ══════════════════════════════════════════ -->
+    <div class="works-grid" id="worksGrid">
+
+      <!-- ── WORK 1 ── -->
+      <div class="work-item" data-title="Plants and Planets" data-detail="acrylic on hardboard, 2014">
+        <div class="work-thumb-wrap">
+          <img
+            src="./images/1-_MG_2374.jpg"
+            alt="Plants and Planets — acrylic on hardboard"
+            loading="lazy"
+          />
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Plants and Planets</div>
+          <div class="work-detail">acrylic on hardboard, 2014</div>
+        </div>
+      </div>
+
+      <!-- ── WORK 2 — irregular canvas example ── -->
+      <div class="work-item work-item--natural" data-title="Clouds and Water, Snow and Night" data-detail="acrylic on canvas on hardboard, 2014">
+        <div class="work-thumb-wrap">
+          <img
+            src="./images/2-_MG_2376.jpg"
+            alt="Clouds and Water, Snow and Night — acrylic on hardboard"
+            loading="lazy"
+          />
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Clouds and Water, Snow and Night</div>
+          <div class="work-detail">acrylic on hardboard, 2014</div>
+        </div>
+      </div>
+
+      <!-- ── WORK 3 ── -->
+      <div class="work-item" data-title="Untitled 03" data-detail="acrylic on canvas, 2024">
+        <div class="work-thumb-wrap">
+          <img src="./images/3-_MG_2377.jpg" alt="Untitled 03" loading="lazy" />
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Untitled 03</div>
+          <div class="work-detail">acrylic on hardboard, 2014</div>
+        </div>
+      </div>
+
+      <!-- ── Copy the block above to add more works ── -->
+
+    </div><!-- /works-grid -->
+
+    <footer class="site-footer">
+      <span>Jana Lumi</span>
+      <span>Tampere, Finland</span>
+    </footer>
+
+  </main>
+
+  <script>
+    /* ── DRAWER ── */
+    const trigger  = document.getElementById('navTrigger');
+    const drawer   = document.getElementById('navDrawer');
+    const overlay  = document.getElementById('navOverlay');
+    const closeBtn = document.getElementById('navClose');
+    const tab      = document.getElementById('navTab');
+
+    function openDrawer()  { drawer.classList.add('open'); overlay.classList.add('open'); tab.classList.add('hidden'); trigger.setAttribute('aria-expanded','true'); closeBtn.focus(); }
+    function closeDrawer() { drawer.classList.remove('open'); overlay.classList.remove('open'); tab.classList.remove('hidden'); trigger.setAttribute('aria-expanded','false'); trigger.focus(); }
+
+    trigger.addEventListener('click', openDrawer);
+    tab.addEventListener('click', openDrawer);
+    overlay.addEventListener('click', closeDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer(); });
+
+    /* ── LIGHTBOX ── */
+    const lightbox        = document.getElementById('lightbox');
+    const lightboxImg     = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose   = document.getElementById('lightboxClose');
+    const lightboxPrev    = document.getElementById('lightboxPrev');
+    const lightboxNext    = document.getElementById('lightboxNext');
+
+    const items = Array.from(document.querySelectorAll('.work-item'));
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      const item = items[index];
+      const img  = item.querySelector('img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCaption.textContent = [item.dataset.title, item.dataset.detail].filter(Boolean).join(' — ');
+      lightbox.classList.add('open');
+      lightboxClose.focus();
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function showPrev() { openLightbox((currentIndex - 1 + items.length) % items.length); }
+    function showNext() { openLightbox((currentIndex + 1) % items.length); }
+
+    items.forEach((item, i) => {
+      item.addEventListener('click', () => openLightbox(i));
+      item.setAttribute('role', 'button');
+      item.setAttribute('tabindex', '0');
+      item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i); } });
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', showPrev);
+    lightboxNext.addEventListener('click', showNext);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape')     closeLightbox();
+      if (e.key === 'ArrowLeft')  showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    });
+  </script>
+
+</body>
+</html>
