@@ -1,0 +1,746 @@
+/*
+  ================================================================
+  Janna Vepsäläinen — Art Portfolio
+  Shared stylesheet for all pages
+  ================================================================
+
+  STRUCTURE OF THIS FILE
+  ───────────────────────
+  1.  Colour variables       ← edit here to recolour everything
+  2.  Reset & base
+  3.  Typography
+  4.  Drawer navigation
+  5.  Page layout
+  6.  Site header
+  7.  Intro / about text     (index.html)
+  8.  Category grid          (index.html)
+  9.  Works grid & lightbox  (works-*.html)
+  10. CV page                (cv.html)
+  11. Shared footer
+  12. Responsive overrides
+
+  If you reorganise files into subfolders later,
+  update the href in each HTML file to match, e.g.
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  ================================================================
+*/
+
+
+/* ================================================================
+   1. COLOUR VARIABLES
+   Change any value here and it cascades through every page.
+   Comments note the approximate colour name for easy swapping.
+   ================================================================ */
+:root {
+  --bg:              #f2ede4;   /* warm parchment / tea-stained off-white */
+  --bg-drawer:       #e8e1d4;   /* slightly darker parchment — drawer panel */
+  --bg-overlay:      rgba(30, 24, 16, 0.18); /* dark scrim behind open drawer */
+
+  --text-primary:    #1e1810;   /* near-black, warm brown-black — headings, strong text */
+  --text-secondary:  #4a3f32;   /* dark warm brown — body text, CV content */
+  --text-meta:       #7a6e62;   /* medium warm grey-brown — dates, captions, section labels */
+  --text-link:       #2d5a27;   /* deep grass green — nav links, accents */
+  --text-link-hover: #1a3818;   /* darker grass green — hover state */
+  --text-accent:     #8b3a0f;   /* burnt sienna — use sparingly for emphasis */
+
+  --border:          #c8bfb0;   /* soft warm grey — dividers, grid borders */
+  --border-strong:   #4a3f32;   /* dark warm brown — primary horizontal rules */
+
+  --nav-trigger-color: #2d5a27; /* plant icon colour — matches --text-link */
+}
+
+
+/* ================================================================
+   2. RESET & BASE
+   ================================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  min-height: 100vh;
+  /* Subtle paper texture via SVG noise — purely decorative */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+a {
+  color: var(--text-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--text-link-hover);
+  text-decoration: underline;
+}
+
+
+/* ================================================================
+   3. TYPOGRAPHY
+   Josefin Sans — labels, nav, headings (sharp geometric)
+   EB Garamond  — body text, descriptions, CV content
+   ================================================================ */
+
+/* Utility class for all-caps Josefin Sans labels */
+.label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-meta);
+}
+
+
+/* ================================================================
+   4. DRAWER NAVIGATION
+   ================================================================ */
+
+/* ── Trigger button (plant SVG, fixed top-right) ── */
+.nav-trigger {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 200;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-trigger-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-link);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-trigger:hover .nav-trigger-label {
+  opacity: 1;
+}
+
+.nav-trigger svg {
+  width: 38px;
+  height: 38px;
+  color: var(--nav-trigger-color);
+  transition: transform 0.4s ease;
+}
+
+.nav-trigger:hover svg {
+  transform: rotate(15deg) scale(1.08);
+}
+
+/* ── Pull-tab hint on right edge (visible when drawer is closed) ── */
+.nav-tab {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 155;
+  width: 18px;
+  background: var(--bg-drawer);
+  border: 1px solid var(--border);
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  padding: 0.75rem 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.nav-tab.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-tab span {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-meta);
+  writing-mode: vertical-rl;
+}
+
+/* ── Overlay scrim ── */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--bg-overlay);
+  z-index: 150;
+  backdrop-filter: blur(1px);
+}
+
+.nav-overlay.open {
+  display: block;
+}
+
+/* ── Drawer panel ── */
+.nav-drawer {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 280px;
+  max-width: 85vw;
+  height: 100vh;
+  background: var(--bg-drawer);
+  border-left: 1px solid var(--border);
+  z-index: 160;
+  padding: 4rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: right 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+  overflow-y: auto;
+}
+
+.nav-drawer.open {
+  right: 0;
+}
+
+/* ── Close button inside drawer ── */
+.nav-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-meta);
+}
+
+.nav-close:hover {
+  color: var(--text-primary);
+}
+
+/* ── Drawer sections and links ── */
+.nav-drawer-section {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.nav-drawer-section--first {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.nav-drawer-heading {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-meta);
+  margin-bottom: 0.75rem;
+}
+
+.nav-drawer a {
+  display: block;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-drawer a:hover {
+  color: var(--text-link);
+  border-bottom-color: var(--border);
+  text-decoration: none;
+}
+
+/* Current page — add class="active" to the matching link in each HTML file */
+.nav-drawer a.active {
+  color: var(--text-link);
+  font-weight: 600;
+}
+
+
+/* ================================================================
+   5. PAGE LAYOUT
+   ================================================================ */
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 6rem;
+}
+
+/* Narrower column for the CV page */
+.page--narrow {
+  max-width: 720px;
+}
+
+
+/* ================================================================
+   6. SITE HEADER
+   ================================================================ */
+
+/* index.html — full name as display heading */
+.site-header {
+  margin-bottom: 3.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.site-name-display {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.site-name-display strong {
+  font-weight: 600;
+}
+
+.site-tagline {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--text-meta);
+  margin-top: 0.3rem;
+  letter-spacing: 0.02em;
+}
+
+/* Inner pages — compact header with back-link + page title inline */
+.site-header--inner {
+  margin-bottom: 3rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-strong);
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.site-name-link {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.site-name-link a {
+  color: var(--text-meta);
+}
+
+.site-name-link a:hover {
+  color: var(--text-link);
+  text-decoration: none;
+}
+
+.page-title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: clamp(1.2rem, 3.5vw, 1.75rem);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+
+/* ================================================================
+   7. INTRO / ABOUT TEXT  (index.html)
+   ================================================================ */
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem 3rem;
+  margin-bottom: 4rem;
+  align-items: start;
+}
+
+.intro-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-meta);
+  padding-top: 0.35rem;
+}
+
+.intro-text p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+.intro-text em {
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+
+/* ================================================================
+   8. CATEGORY GRID  (index.html)
+   ================================================================ */
+.section-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-meta);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.category-card {
+  display: block;
+  text-decoration: none;
+}
+
+.category-card:hover .category-thumb {
+  opacity: 0.85;
+}
+
+.category-card:hover .category-title {
+  color: var(--text-link);
+  text-decoration: none;
+}
+
+.category-thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.25s ease;
+  min-height: 160px;
+}
+
+/* Placeholder shown before a cover image is added */
+.category-thumb-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  min-height: 160px;
+  background: linear-gradient(135deg, var(--border) 0%, var(--bg-drawer) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-thumb-placeholder span {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-meta);
+}
+
+.category-title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-top: 0.6rem;
+  transition: color 0.2s;
+}
+
+.category-count {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--text-meta);
+  margin-top: 0.1rem;
+}
+
+
+/* ================================================================
+   9. WORKS GRID & LIGHTBOX  (works-*.html)
+   ================================================================ */
+
+/* Optional short category description */
+.category-intro {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 4rem;
+}
+
+.work-item {
+  cursor: pointer;
+}
+
+.work-thumb-wrap {
+  overflow: hidden;
+  background: var(--border);
+  position: relative;
+}
+
+/* Default: square crop — works for most paintings */
+.work-thumb-wrap img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, opacity 0.25s ease;
+}
+
+.work-item:hover .work-thumb-wrap img {
+  transform: scale(1.03);
+  opacity: 0.88;
+}
+
+/* Add class="work-item--natural" for irregular/non-square pieces */
+.work-item--natural .work-thumb-wrap img {
+  aspect-ratio: unset;
+  height: auto;
+  object-fit: contain;
+  background: var(--bg-drawer);
+  padding: 0.5rem;
+}
+
+.work-meta {
+  padding: 0.5rem 0 0;
+}
+
+.work-title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.work-detail {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--text-meta);
+  margin-top: 0.1rem;
+}
+
+/* ── Lightbox ── */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 14, 8, 0.92);
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: min(900px, 90vw);
+  max-height: 80vh;
+  object-fit: contain;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+  margin-top: 1rem;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.lightbox-close:hover {
+  color: #fff;
+}
+
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 1rem;
+  transition: color 0.2s;
+}
+
+.lightbox-nav:hover {
+  color: #fff;
+}
+
+.lightbox-nav--prev { left: 0.5rem; }
+.lightbox-nav--next { right: 0.5rem; }
+
+
+/* ================================================================
+   10. CV PAGE  (cv.html)
+   ================================================================ */
+
+.cv-statement {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 540px;
+}
+
+.cv-section {
+  margin-bottom: 3rem;
+}
+
+.cv-section-heading {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-meta);
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cv-row {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 0 1.5rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: baseline;
+}
+
+.cv-row:last-child {
+  border-bottom: none;
+}
+
+.cv-year {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--text-meta);
+  padding-top: 0.1rem;
+}
+
+.cv-content {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.cv-content strong {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.cv-sub {
+  display: block;
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--text-meta);
+  margin-top: 0.1rem;
+}
+
+
+/* ================================================================
+   11. SHARED FOOTER
+   ================================================================ */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-meta);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+
+/* ================================================================
+   12. RESPONSIVE OVERRIDES
+   ================================================================ */
+@media (max-width: 640px) {
+  .intro {
+    grid-template-columns: 1fr;
+  }
+
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 380px) {
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+}
