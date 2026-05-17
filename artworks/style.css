@@ -529,7 +529,7 @@ a:hover {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 0.75rem;
   color: var(--text-notes);
-  max-width: 520px;
+  max-width: 600px;
   margin-bottom: 1.6rem;
   line-height: 1.2;
 }
