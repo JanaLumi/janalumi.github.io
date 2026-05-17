@@ -56,6 +56,7 @@
 
   --text-primary:    #524b41;   /* dark warm brown-black with red notes — headings, strong text */
   --text-secondary:  #4a3f32;   /* dark warm brown — body text, CV content */
+  --text-notes:      #ab8e6a;   /* muted medium brown — notes, photographer credit */
   --text-meta:       #7a6e62;   /* medium warm grey-brown — dates, captions, section labels */
   --text-link:       #2d5a27;   /* deep grass green — nav links, accents */
   --text-link-hover: #1a3818;   /* darker grass green — hover state */
@@ -522,6 +523,15 @@ a:hover {
   max-width: 520px;
   margin-bottom: 2.5rem;
   line-height: 1.6;
+}
+
+.photo-note {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.75rem;
+  color: var(--text-notes);
+  max-width: 520px;
+  margin-bottom: 2rem;
+  line-height: 1.4;
 }
 
 .works-grid {
