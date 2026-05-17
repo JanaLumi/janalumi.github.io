@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ╔══════════════════════════════════════════╗
+       ║  EDIT THIS LINE for each category page  ║
+       ╚══════════════════════════════════════════╝ -->
+  <title>Concrete and Mixed Materials — Jana Lumi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV TRIGGER -->
+  <button class="nav-trigger" id="navTrigger" aria-label="Open navigation" aria-expanded="false" aria-controls="navDrawer">
+    <span class="nav-trigger-label">Menu</span>
+    <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M19 34 L19 16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M19 22 C14 20 10 14 13 9 C16 14 18 18 19 22Z" fill="currentColor" opacity="0.75"/>
+      <path d="M19 18 C24 15 29 10 26 5 C23 10 21 14 19 18Z" fill="currentColor" opacity="0.9"/>
+      <path d="M19 28 C15 27 12 23 14 19 C16 23 17 26 19 28Z" fill="currentColor" opacity="0.5"/>
+      <circle cx="28" cy="9" r="2.5" fill="currentColor" opacity="0.4"/>
+      <line x1="28" y1="5.5" x2="28" y2="4"   stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+      <line x1="31" y1="6.5" x2="32" y2="5.2" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+      <line x1="32" y1="9"   x2="33.5" y2="9" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+    </svg>
+  </button>
+
+  <div class="nav-tab" id="navTab" role="presentation" aria-hidden="true"><span>Works</span></div>
+  <div class="nav-overlay" id="navOverlay" role="presentation"></div>
+
+  <nav class="nav-drawer" id="navDrawer" aria-label="Site navigation">
+    <button class="nav-close" id="navClose" aria-label="Close navigation">Close ×</button>
+    <div class="nav-drawer-section" style="margin-top:0;padding-top:0;border-top:none;">
+      <div class="nav-drawer-heading">Pages</div>
+      <a href="index.html">About</a>
+      <a href="cv.html">CV &amp; Displays</a>
+    </div>
+    <div class="nav-drawer-section">
+      <div class="nav-drawer-heading">Works</div>
+      <!-- Mark the current page with class="active" -->
+      <a href="works-canvas.html" class="active">Canvas paintings</a>
+      <a href="works-boards.html">Acrylic on boards</a>
+      <a href="works-textile.html">Textile sculptures</a>
+      <a href="works-concrete.html">Concrete &amp; mixed</a>
+      <a href="works-digital.html">Digital &amp; 360°</a>
+    </div>
+    <div class="nav-drawer-section">
+      <div class="nav-drawer-heading">Elsewhere</div>
+      <a href="https://vimeo.com/" target="_blank" rel="noopener">Vimeo ↗</a>
+    </div>
+  </nav>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" id="lightboxClose">Close ×</button>
+    <button class="lightbox-nav lightbox-nav--prev" id="lightboxPrev" aria-label="Previous">&#8592;</button>
+    <img id="lightboxImg" src="" alt="" />
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+    <button class="lightbox-nav lightbox-nav--next" id="lightboxNext" aria-label="Next">&#8594;</button>
+  </div>
+
+  <!-- ══ MAIN CONTENT ══ -->
+  <main class="page">
+
+    <header class="site-header">
+      <div class="site-name"><a href="index.html">Jana Lumi</a></div>
+      <!-- ╔══════════════════════════════════════╗
+           ║  EDIT: page title per category       ║
+           ╚══════════════════════════════════════╝ -->
+      <h1 class="page-title">Concrete and Mixed Materials</h1>
+    </header>
+
+    <!-- ╔══════════════════════════════════════════╗
+         ║  EDIT: short category description        ║
+         ║  (or remove this element entirely)       ║
+         ╚══════════════════════════════════════════╝ -->
+    <p class="category-intro">
+      Concrete and mixed materials, exploring dynamic and relational properties of materials.
+    </p>
+
+    <div class="section-label">Works</div>
+
+    <!-- ══════════════════════════════════════════
+         WORKS GRID
+         To add a work: copy one <div class="work-item"> block.
+         For irregular/non-square pieces, add class "work-item--natural"
+         to show the full image without cropping.
+    ══════════════════════════════════════════ -->
+    <div class="works-grid" id="worksGrid">
+
+      <!-- ── WORK 1 ── -->
+      <div class="work-item" data-title="Drops" data-detail="concrete repair substrate, 2022">
+        <div class="work-thumb-wrap">
+          <img
+            src="./images/blank.jpg" alt="Drops — concrete repair substrate" loading="lazy" />
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Plants and Planets</div>
+          <div class="work-detail">concrete repair substrate, 2022</div>
+        </div>
+      </div>
+
+      <!-- ── WORK 2 ── -->
+      <div class="work-item work-item--natural" data-title="Hyperbolic Sphere, Soft formwork" data-detail="Cotton and concrete, 2022">
+        <div class="work-thumb-wrap">
+          <img
+            src="./images/blank.jpg"
+            alt="Hyperbolic Sphere, Soft formwork — Cotton and concrete"
+            loading="lazy"
+          />
+        </div>
+        <div class="work-meta">
+          <div class="work-title"></div>
+          <div class="work-detail">Cotton and concrete, 2022</div>
+        </div>
+      </div>
+
+      <!-- ── WORK 3 ── -->
+      <div class="work-item" data-title="Off World" data-detail="acrylic on hardboard, 2014">
+        <div class="work-thumb-wrap">
+          <img src="./images/3-_MG_2377_ro.jpg" alt="Off World" loading="lazy" />
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Off World</div>
+          <div class="work-detail">acrylic on hardboard, 2014</div>
+        </div>
+      </div>
+      
+      <!-- ── WORK 4 ── -->
+      <div class="work-item" data-title="Meadow" data-detail="acrylic on hardboard, 2025">
+        <div class="work-thumb-wrap">
+          <img src="./images/Meadow.jpg" alt="Meadow" loading="lazy" />
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Meadow</div>
+          <div class="work-detail">acrylic on hardboard, 2025</div>
+        </div>
+      </div>
+
+      <!-- ── WORK 5 ── -->
+      <div class="work-item" data-title="Other Lands" data-detail="acrylic on hardboard, 2026">
+        <div class="work-thumb-wrap">
+          <img src="./images/Other_World.jpg" alt="Other Lands" loading="lazy" />
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Other Lands</div>
+          <div class="work-detail">acrylic on hardboard, 2014</div>
+        </div>
+      </div>
+
+      <!-- ── WORK 6 ── -->
+      <div class="work-item" data-title="Tree" data-detail="acrylic on hardboard, 2026">
+        <div class="work-thumb-wrap">
+          <img src="./images/Tree.jpg" alt="Tree" loading="lazy" />
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Tree</div>
+          <div class="work-detail">acrylic on hardboard, 2026</div>
+        </div>
+      </div>
+
+      <!-- ── WORK 7 ── -->
+      <div class="work-item" data-title="Landscape" data-detail="acrylic on hardboard, 2026">
+        <div class="work-thumb-wrap">
+          <img src="./images/Landscape.jpg" alt="Landscape" loading="lazy" />
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Landscape</div>
+          <div class="work-detail">acrylic on hardboard, 2026</div>
+        </div>
+      </div>
+
+      <!-- ── WORK 8 ── -->
+      <div class="work-item" data-title="City" data-detail="acrylic on hardboard, 2025">
+        <div class="work-thumb-wrap">
+          <img src="./images/City.jpg" alt="City" loading="lazy" />
+        </div>
+        <div class="work-meta">
+          <div class="work-title">City</div>
+          <div class="work-detail">acrylic on hardboard, 2025</div>
+        </div>
+      </div>
+
+      <!-- ── WORK 9 ── -->
+      <div class="work-item" data-title="Patterns 01" data-detail="acrylic on hardboard, 2026">
+        <div class="work-thumb-wrap">
+          <img src="./images/01 mdf.jpg" alt="Patterns 01" loading="lazy" />
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Patterns 01</div>
+          <div class="work-detail">acrylic on hardboard, 2026</div>
+        </div>
+      </div>
+
+      <!-- ── WORK 10 ── -->
+      <div class="work-item" data-title="Patterns 02" data-detail="acrylic on hardboard, 2026">
+        <div class="work-thumb-wrap">
+          <img src="./images/02 mdf.jpg" alt="Patterns 02" loading="lazy" />
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Patterns 02</div>
+          <div class="work-detail">acrylic on hardboard, 2026</div>
+        </div>
+      </div>
+
+      <!-- ── WORK 11 ── -->
+      <div class="work-item" data-title="Patterns 03" data-detail="acrylic on hardboard, 2026">
+        <div class="work-thumb-wrap">
+          <img src="./images/03 mdf.jpg" alt="Patterns 03" loading="lazy" />
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Patterns 03</div>
+          <div class="work-detail">acrylic on hardboard, 2026</div>
+        </div>
+      </div>
+
+      <!-- ── WORK 12 ── -->
+      <div class="work-item" data-title="Patterns 04" data-detail="acrylic on hardboard, 2026">
+        <div class="work-thumb-wrap">
+          <img src="./images/04 mdf.jpg" alt="Patterns 04" loading="lazy" />
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Patterns 04</div>
+          <div class="work-detail">acrylic on hardboard, 2014</div>
+        </div>
+      </div>
+
+      <!-- ── WORK 13 ── -->
+      <div class="work-item" data-title="Patterns 05" data-detail="acrylic on hardboard, 2026">
+        <div class="work-thumb-wrap">
+          <img src="./images/05 mdf.jpg" alt="Patterns 05" loading="lazy" />
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Patterns 05</div>
+          <div class="work-detail">acrylic on hardboard, 2014</div>
+        </div>
+      </div>
+
+      <!-- ── WORK 14 ── -->
+      <div class="work-item" data-title="Patterns 06" data-detail="acrylic on hardboard, 2026">
+        <div class="work-thumb-wrap">
+          <img src="./images/06 mdf.jpg" alt="Patterns 06" loading="lazy" />
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Patterns 06</div>
+          <div class="work-detail">acrylic on hardboard, 2014</div>
+        </div>
+      </div>
+
+      <!-- ── WORK 14 ── -->
+      <div class="work-item" data-title="Patterns 07" data-detail="acrylic on hardboard, 2026">
+        <div class="work-thumb-wrap">
+          <img src="./images/07 mdf.jpg" alt="Patterns 07" loading="lazy" />
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Patterns 07</div>
+          <div class="work-detail">acrylic on hardboard, 2014</div>
+        </div>
+      </div>
+
+      <!-- ── WORK 14 ── -->
+      <div class="work-item" data-title="Patterns 08" data-detail="acrylic on hardboard, 2026">
+        <div class="work-thumb-wrap">
+          <img src="./images/08 mdf.jpg" alt="Patterns 08" loading="lazy" />
+        </div>
+        <div class="work-meta">
+          <div class="work-title">Patterns 08</div>
+          <div class="work-detail">acrylic on hardboard, 2026</div>
+        </div>
+      </div>
+
+      <!-- ── Copy the block above to add more works ── -->
+
+    </div><!-- /works-grid -->
+
+    <footer class="site-footer">
+      <span>Jana Lumi</span>
+      <span>Tampere, Suomi</span>
+    </footer>
+
+  </main>
+
+  <script>
+    /* ── DRAWER ── */
+    const trigger  = document.getElementById('navTrigger');
+    const drawer   = document.getElementById('navDrawer');
+    const overlay  = document.getElementById('navOverlay');
+    const closeBtn = document.getElementById('navClose');
+    const tab      = document.getElementById('navTab');
+
+    function openDrawer()  { drawer.classList.add('open'); overlay.classList.add('open'); tab.classList.add('hidden'); trigger.setAttribute('aria-expanded','true'); closeBtn.focus(); }
+    function closeDrawer() { drawer.classList.remove('open'); overlay.classList.remove('open'); tab.classList.remove('hidden'); trigger.setAttribute('aria-expanded','false'); trigger.focus(); }
+
+    trigger.addEventListener('click', openDrawer);
+    tab.addEventListener('click', openDrawer);
+    overlay.addEventListener('click', closeDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer(); });
+
+    /* ── LIGHTBOX ── */
+    const lightbox        = document.getElementById('lightbox');
+    const lightboxImg     = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose   = document.getElementById('lightboxClose');
+    const lightboxPrev    = document.getElementById('lightboxPrev');
+    const lightboxNext    = document.getElementById('lightboxNext');
+
+    const items = Array.from(document.querySelectorAll('.work-item'));
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      const item = items[index];
+      const img  = item.querySelector('img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCaption.textContent = [item.dataset.title, item.dataset.detail].filter(Boolean).join(' — ');
+      lightbox.classList.add('open');
+      lightboxClose.focus();
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function showPrev() { openLightbox((currentIndex - 1 + items.length) % items.length); }
+    function showNext() { openLightbox((currentIndex + 1) % items.length); }
+
+    items.forEach((item, i) => {
+      item.addEventListener('click', () => openLightbox(i));
+      item.setAttribute('role', 'button');
+      item.setAttribute('tabindex', '0');
+      item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i); } });
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', showPrev);
+    lightboxNext.addEventListener('click', showNext);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape')     closeLightbox();
+      if (e.key === 'ArrowLeft')  showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    });
+  </script>
+
+</body>
+</html>
