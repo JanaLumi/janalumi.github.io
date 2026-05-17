@@ -326,10 +326,21 @@ a:hover {
    ================================================================ */
 
 /* index.html — full name as display heading */
-.site-header {
+.site-header-full {
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--border-strong);
+}
+
+/* Inner pages — compact header with back-link + page title inline */
+.site-header {
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-strong);
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .site-name-display {
@@ -352,17 +363,6 @@ a:hover {
   color: var(--text-meta);
   margin-top: 0.3rem;
   letter-spacing: 0.02em;
-}
-
-/* Inner pages — compact header with back-link + page title inline */
-.site-header {
-  margin-bottom: 2rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--border-strong);
-  display: flex;
-  align-items: baseline;
-  gap: 1.5rem;
-  flex-wrap: wrap;
 }
 
 .site-name {
