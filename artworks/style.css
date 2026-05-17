@@ -520,7 +520,7 @@ a:hover {
   font-size: 1rem;
   color: var(--text-secondary);
   font-style: italic;
-  max-width: 520px;
+  max-width: 600px;
   margin-bottom: 1.5rem;
   line-height: 1.6;
 }
