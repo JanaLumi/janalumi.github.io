@@ -737,6 +737,13 @@ a:hover {
   margin-top: 0.1rem;
 }
 
+.contact {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
 
 /* ================================================================
    11. SHARED FOOTER
