@@ -500,7 +500,23 @@
     lightboxClose.addEventListener('click', closeLightbox);
     lightboxPrev.addEventListener('click', showPrev);
     lightboxNext.addEventListener('click', showNext);
-    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    // lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+    let pointerDownX = 0;
+    let pointerDownY = 0;
+    
+    lightbox.addEventListener('pointerdown', e => {
+      pointerDownX = e.clientX;
+      pointerDownY = e.clientY;
+    });
+    
+    lightbox.addEventListener('click', e => {
+      if (e.target !== lightbox) return;
+      if (e.button === 2) return;  // ignore right click
+      const dx = Math.abs(e.clientX - pointerDownX);
+      const dy = Math.abs(e.clientY - pointerDownY);
+      if (dx < 6 && dy < 6) closeLightbox();
+    });
 
     document.addEventListener('keydown', e => {
       if (!lightbox.classList.contains('open')) return;
