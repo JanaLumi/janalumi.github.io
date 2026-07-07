@@ -1,6 +1,6 @@
 # Research
 
-> **Investigating how interactive systems can help people navigate complex relationships and everyday decisions.**
+> **Investigating how interactive tools can help people navigate complex systems for everyday decision making.**
 
 My work explores how digital interfaces can make complex systems more understandable and more navigable without replacing human judgement.
 
