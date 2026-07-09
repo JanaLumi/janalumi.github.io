@@ -36,6 +36,24 @@ The project investigates how interfaces can reveal relationships that are often 
 
 ---
 
+### Case Study — MatchBot
+
+MatchBot explores how people navigate complex organisational information through interactive exploration and collaborative conversation rather than automated matching or recommendation systems.
+
+Research themes include:
+
+- collaborative decision navigation
+- interactive information filtering
+- conversational facilitation
+- progressive elimination ("Guess Who?") as a navigation technique
+- visible relationships between organisations
+- privacy-conscious UX research
+- human judgement supported rather than replaced
+
+The project investigates how interfaces can externalise complex information, helping people orient themselves, explore possibilities together, and navigate uncertainty while keeping human conversation and decision-making at the centre of the process.
+
+---
+
 ### Future Case Study — Product Navigator
 
 This project extends the same research principles beyond artworks.
