@@ -12,13 +12,41 @@ Many contemporary digital systems optimise for speed, engagement or sales. My re
 
 # Research Themes
 
+| Case Study                      | What people are navigating   |
+| ------------------------------- | ---------------------------- |
+| **Typoscale**                   | Design decisions             |
+| **ArtWork**                     | Art and aesthetic decisions  |
+| **MatchBot**                    | Organisational relationships |
+| **Product Navigator** (planned) | Consumer products            |
+
+
 ## 1. Context-Aware Decision Making
 
 **Research Question**
 
 > How can interactive systems help people make informed, context-aware decisions without overwhelming them or making the decision for them?
 
-### Case Study — ArtWork
+### Case Study — [Typoscale](https://typoscale.netlify.app/)
+
+Typoscale explores how interactive design tools can support people navigating complex interface design decisions through real-time experimentation rather than fixed templates or trial-and-error.
+
+Research themes include:
+
+- design decision support
+- design systems
+- responsive typography and scaling
+- multi-theme exploration and comparison
+- colour relationships and accessibility
+- reducing cognitive load during interface design
+- human judgement supported rather than replaced
+
+The project investigates how interactive tooling can make interface design more approachable by inviting people to explore typography, colour and layout together within a single environment. Rather than prescribing design choices, Typoscale enables users to compare alternatives, understand relationships between design elements, and develop accessible interfaces through exploration.
+
+The project also explores how design tools can broaden access to good interface design practices beyond specialist training. By making accessibility, typography and colour relationships easier to understand and experiment with, the interface aims to support a wider community of people creating digital experiences, from personal websites to community projects and small businesses.
+
+---
+
+### Case Study — [ArtWork](https://janalumi.github.io/ArtWork/)
 
 ArtWork explores how people discover and choose artworks through interactive exploration rather than recommendation algorithms.
 
@@ -36,7 +64,7 @@ The project investigates how interfaces can reveal relationships that are often 
 
 ---
 
-### Case Study — MatchBot
+### Case Study — [MatchBot](https://matchbot.netlify.app/)
 
 MatchBot explores how people navigate complex organisational information through interactive exploration and collaborative conversation rather than automated matching or recommendation systems.
 
@@ -74,46 +102,6 @@ The objective is not to recommend products but to make complex product informati
 
 ---
 
-## 2. Participation and Visible Collaboration
-
-**Research Question**
-
-> How can digital interfaces make participation and collaboration more visible?
-
-### Case Study — Meeting Scarf
-
-Meeting Scarf explores how conversation can be represented as a woven visual artefact rather than traditional charts and statistics.
-
-Research themes include:
-
-- participation
-- visual communication
-- collaborative dynamics
-- data physicalisation
-- alternative representations of meetings
-
----
-
-## 3. Community Infrastructure
-
-**Research Question**
-
-> How can digital systems strengthen sharing, repair and long-term stewardship within communities?
-
-### Current Work
-
-Current work investigates digital tools that support:
-
-- sharing economies
-- repair cafés
-- sustainable ownership
-- resource circulation
-- community decision-making
-
-This research asks how digital systems can help communities care for resources over longer timescales rather than simply increasing consumption.
-
----
-
 # Design Principles
 
 Across these projects, several principles continue to emerge.
@@ -130,17 +118,17 @@ When users already know what they want, the interface should stay out of the way
 
 When uncertainty exists, interfaces can provide additional ways to explore, compare and understand.
 
-## Systems thinking
+## Systems Thinking
 
-Objects exist within relationships.
+Objects do not exist in isolation. They exist within networks of relationships that change over time.
 
-An artwork exists within a room.
+An artwork exists within a room, where light, colour, architecture and neighbouring objects all influence how it is experienced.
 
-A product exists within a lifecycle.
+A product exists within a lifecycle, from material extraction and manufacture to maintenance, repair, reuse and eventual recycling or disposal.
 
-A shared object exists within a community.
+Objects may also exist within communities, passing between people through sharing, lending, repair and collective stewardship rather than individual ownership alone.
 
-Interfaces can help make these relationships visible.
+Interfaces can help make these relationships visible, enabling people to navigate not only individual objects but also the broader systems in which they participate.
 
 ## Designing for navigation
 
