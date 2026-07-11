@@ -6,6 +6,27 @@ My work explores how digital interfaces can make complex systems more understand
 
 Many contemporary digital systems optimise for speed, engagement or sales. My research instead asks how interface design can help people navigate complexity at an appropriate pace, particularly when decisions involve uncertainty, multiple trade-offs or long-term consequences.
 
+## Approach
+
+My research follows a practice-based approach in which interactive prototypes are developed as research instruments rather than simply demonstrations of finished ideas. Designing, building and testing interfaces allows research questions to be explored through practice. Each iteration generates new observations, raises new questions and informs the next stage of investigation.
+
+Rather than separating theory from implementation, I use design, software development and critical reflection as complementary methods of inquiry. The resulting prototypes make ideas tangible, creating opportunities to investigate how people navigate complexity, interact with information and make decisions within changing contexts. Written research remains an important part of this process, but it is complemented by working systems that can be explored, questioned and evaluated in practice.
+
+## Perspective
+
+My research is informed by systems thinking, community information ecologies and practice-based design research.
+
+Earlier work investigating neighbourhoods, participation and sharing economies highlighted how people, objects and information exist within evolving networks of relationships. These systems cannot always be understood through observation alone.
+
+Building interactive systems becomes a way of investigating those relationships. Prototypes allow research questions to be explored through practice, while decision navigation provides one means of examining how people orient themselves within complex information ecologies.
+
+## Previous Research
+
+Prior to my current focus on decision navigation, I investigated community information ecologies and neighbourhood-scale participation. These projects continue to inform my understanding of systems thinking, context and the relationships between people, places and digital technologies.
+
+Selected publication:
+ResNei: Solution Design Document (2025) https://zenodo.org/records/16753709
+
 ---
 
 # Research Themes
