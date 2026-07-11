@@ -142,14 +142,6 @@ Rather than accelerating users towards predetermined outcomes, this approach sup
 
 The objective is not to maximise engagement or conversion, but to help people develop an increasingly informed understanding of the systems they are navigating.
 
-## Decision pacing
-
-Interfaces should adapt to uncertainty.
-
-When users already know what they want, the interface should stay out of the way.
-
-When uncertainty exists, interfaces can provide additional ways to explore, compare and understand.
-
 ## Systems Thinking
 
 Objects do not exist in isolation. They exist within networks of relationships that change over time.
