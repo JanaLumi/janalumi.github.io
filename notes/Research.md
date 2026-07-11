@@ -102,7 +102,7 @@ The objective is not to recommend products but to make complex product informati
 
 # Design Orientation
 
-<img src="../images/Decision_Navigation.png">
+<center><img src="../images/Decision_Navigation.png"></center>
 
 Design decisions are never neutral, nor objective. Every affordance and every constraint redistributes opportunities, responsibilities and effort. Measures intended to reduce misuse may also introduce new barriers, and those barriers are not experienced equally.
 
