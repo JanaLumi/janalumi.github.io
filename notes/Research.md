@@ -102,8 +102,9 @@ The objective is not to recommend products but to make complex product informati
 
 # Design Orientation
 
-<center><img src="../images/Decision_Navigation.png" width="400px"></center>
-About the image: Decision navigation emerges through the balance of affordances and constraints. Rather than treating these as fixed properties, this research investigates how their interaction shapes opportunities for exploration, participation and informed judgement.
+<img src="../images/Decision_Navigation.png" width="400px">
+
+*About the image: Decision navigation emerges through the balance of affordances and constraints. Rather than treating these as fixed properties, this research investigates how their interaction shapes opportunities for exploration, participation and informed judgement.*
 
 Design decisions are never neutral, nor objective. Every affordance and every constraint redistributes opportunities, responsibilities and effort. Measures intended to reduce misuse may also introduce new barriers, and those barriers are not experienced equally.
 
