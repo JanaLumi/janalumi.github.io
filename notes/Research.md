@@ -142,7 +142,8 @@ Interfaces can help make these relationships visible, enabling people to navigat
 
 ## Designing for navigation
 
-Rather than producing answers, my work explores how interfaces can help people navigate complex systems through exploration, comparison and context.
+Many commercial interfaces optimise for engagement, conversion or retention. This research instead investigates interfaces that optimise for contextual awareness and information navigation. Rather than prematurely narrowing possibilities, my work explores how interfaces can provide people with tooling to navigate complex systems through exploration, comparison and context.
+
 
 ---
 
