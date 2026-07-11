@@ -109,9 +109,16 @@ Design decisions are never neutral, nor objective. Every affordance and every co
 
 This research investigates how interactive systems can balance these trade-offs while expanding people's ability to navigate information, understand consequences and exercise informed judgement. The question is not only what an interface allows or prevents, but who benefits, who carries the additional effort, and whose ways of interacting become possible or impossible.
 
-## Context before persuasion
 
-Interfaces should reveal relevant information rather than optimise for conversion or engagement.
+## Progressive Disclosure of Context
+
+Information does not need to appear all at once, nor should it remain hidden behind opaque systems.
+
+As people explore and compare alternatives, interfaces can progressively reveal additional layers of context that become relevant to the decisions they are making.
+
+Rather than accelerating users towards predetermined outcomes, this approach supports progressive understanding. Information is revealed when it helps people orient themselves, compare possibilities and recognise relationships that might otherwise remain hidden.
+
+The objective is not to maximise engagement or conversion, but to help people develop an increasingly informed understanding of the systems they are navigating.
 
 ## Decision pacing
 
