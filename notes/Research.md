@@ -2,9 +2,7 @@
 
 > **Investigating how interactive tools can help people navigate complex systems for everyday decision making.**
 
-My work explores how digital interfaces can make complex systems more understandable and more navigable without replacing human judgement.
-
-Rather than designing systems that persuade people towards a particular outcome, I investigate ways of making relevant information, relationships and context more visible, allowing people to decide according to their own priorities and values.
+My work explores how digital interfaces can make complex systems more understandable and more navigable without replacing human judgement. Rather than designing systems that persuade people towards a particular outcome, I investigate ways of making relevant information, relationships and context more visible, allowing people to decide according to their own priorities and values.
 
 Many contemporary digital systems optimise for speed, engagement or sales. My research instead asks how interface design can help people navigate complexity at an appropriate pace, particularly when decisions involve uncertainty, multiple trade-offs or long-term consequences.
 
@@ -102,9 +100,13 @@ The objective is not to recommend products but to make complex product informati
 
 ---
 
-# Design Principles
+# Design Orientation
 
-Across these projects, several principles continue to emerge.
+<img src="images/Decision_Navigation.png">
+
+Design decisions are never neutral, nor objective. Every affordance and every constraint redistributes opportunities, responsibilities and effort. Measures intended to reduce misuse may also introduce new barriers, and those barriers are not experienced equally.
+
+This research investigates how interactive systems can balance these trade-offs while expanding people's ability to navigate information, understand consequences and exercise informed judgement. The question is not only what an interface allows or prevents, but who benefits, who carries the additional effort, and whose ways of interacting become possible or impossible.
 
 ## Context before persuasion
 
