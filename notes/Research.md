@@ -6,7 +6,7 @@ My work explores how digital interfaces can make complex systems more understand
 
 Many contemporary digital systems optimise for speed, engagement or sales. My research instead asks how interface design can help people navigate complexity at an appropriate pace, particularly when decisions involve uncertainty, multiple trade-offs or long-term consequences.
 
-## Approach
+## Practice-Based Research
 
 My research follows a practice-based approach in which interactive prototypes are developed as research instruments rather than simply demonstrations of finished ideas. Designing, building and testing interfaces allows research questions to be explored through practice. Each iteration generates new observations, raises new questions and informs the next stage of investigation.
 
@@ -171,6 +171,6 @@ Many commercial interfaces optimise for engagement, conversion or retention. Thi
 
 # Long-Term Research Direction
 
-My long-term research investigates how interactive systems can help people navigate complex relationships between people, objects, materials, environments and communities.
+My long-term research investigates how interactive systems can help people navigate complex and evolving relationships between people, objects, materials, environments and communities.
 
 The individual projects shown here are not isolated applications. They are case studies within an ongoing practice-based research programme exploring interface design for navigating complexity in everyday life.
