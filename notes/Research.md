@@ -1,4 +1,4 @@
-# Research
+# Research Portfolio
 
 > **Investigating how interactive tools can help people navigate complex systems for everyday decision making.**
 
