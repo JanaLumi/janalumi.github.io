@@ -101,23 +101,22 @@ The project investigates how interfaces can externalise complex information, hel
 
 ---
 
-### Future Case Study — Product Navigator
+### Case Study — [Product Navigator](https://robotvacnavigator.netlify.app/)
 
 This project extends the same research principles beyond artworks.
 
 Rather than browsing large spreadsheets or commercial catalogues, users navigate products through interactive visualisations and contextual filters.
 
-Possible information includes:
+Research themes:
 
-- durability
-- repairability
-- lifecycle information
-- environmental impact
-- compatibility
-- maintenance
+- decision making
+- product lifecycle (LCA)
+- ecological and social impact
+- suitability and compatibility
+- repairability and maintenance
 - long-term ownership
 
-The objective is not to recommend products but to make complex product information more navigable.
+The direction is not to recommend products but to make complex product information more navigable.
 
 ---
 
