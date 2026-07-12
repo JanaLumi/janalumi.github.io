@@ -114,7 +114,7 @@ Research themes:
 - ecological and social impact
 - suitability and compatibility
 - repairability and maintenance
-- long-term ownership
+- multi-owner long-term ownership
 
 The direction is not to recommend products but to make complex product information more navigable.
 
