@@ -158,10 +158,8 @@ Interfaces can help make these relationships visible, enabling people to navigat
 Many commercial interfaces optimise for engagement, conversion or retention. This research instead investigates interfaces that optimise for contextual awareness and information navigation. Rather than prematurely narrowing possibilities, my work explores how interfaces can provide people with tooling to navigate complex systems through exploration, comparison and context.
 
 
----
-
 # Long-Term Research Direction
 
-My long-term research investigates how interactive systems can help people navigate complex and evolving relationships between people, objects, materials, environments and communities.
+My long-term research investigates interfaces that make systems navigable and how to move through complex and evolving relationships between people, elements, materials, environments and communities.
 
 The individual projects shown here are not isolated applications. They are case studies within an ongoing practice-based research programme exploring interface design for navigating complexity in everyday life.
