@@ -139,19 +139,19 @@ As people explore and compare alternatives, interfaces can progressively reveal 
 
 Rather than accelerating users towards predetermined outcomes, this approach supports progressive understanding. Information is revealed when it helps people orient themselves, compare possibilities and recognise relationships that might otherwise remain hidden.
 
-The objective is not to maximise engagement or conversion, but to help people develop an increasingly informed understanding of the systems they are navigating.
+The direction is not to maximise engagement or conversion, but to enable people develop an increasingly informed understanding of the systems they are navigating.
 
 ## Systems Thinking
 
-Objects do not exist in isolation. They exist within networks of relationships that change over time.
+Relationships and interdependencies are the foundations of systems. While things we call objects might exsist, they are more in the form of boundary objects. Soft edges, blurry lines and fuzzy logics.
 
 An artwork exists within a room, where light, colour, architecture and neighbouring objects all influence how it is experienced.
 
 A product exists within a lifecycle, from material extraction and manufacture to maintenance, repair, reuse and eventual recycling or disposal.
 
-Objects may also exist within communities, passing between people through sharing, lending, repair and collective stewardship rather than individual ownership alone.
+The things we own, are in our realm of responsibility, and they too exist within communities, may be passed between people through sharing, lending, repair and collective stewardship rather than individual possession and gatekeeping.
 
-Interfaces can help make these relationships visible, enabling people to navigate not only individual objects but also the broader systems in which they participate.
+Interfaces can help make these relationships visible, enabling people to navigate not only individual the things we share but also the broader systems in which they participate.
 
 ## Designing for navigation
 
